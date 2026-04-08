@@ -11,7 +11,7 @@
 Post & use other people's themes in Monkeytype for absolutely free!
 
 # Data Management
-We don't take any data from you, including your personal information such as legal name, house address, credit card numbers, etc... Monkeytype Goals is a website designed to help users track goals for the typing test website Monkeytype, so it would be quite pointless to add tracking
+We don't take any data from you, including your personal information such as legal name, house address, credit card numbers, etc... Monkeytype Themes is a website designed to help find and use themes for monkeytype, so it would be quite pointless to add tracking
 
 More information; [Privacy Policy page](https://www.mtgoals.cc/pages/policy)
 
