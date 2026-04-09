@@ -66,8 +66,8 @@ export default function PostThemeModal({ onClose, onPosted }: Props) {
           <input
             className={`${styles.input} ${linkError ? styles.inputError : ''}`}
             value={link}
-            onChange={e => { setLink(e.target.value); if (e.target.value.trim().startsWith('https://monkeytype.com/?customTheme=')) setLinkError(false); }}
-            placeholder="https://monkeytype.com/..."
+            onChange={e => { setLink(e.target.value); if (e.target.value.trim().startsWith('https://monkeytype.com?customTheme=')) setLinkError(false); }}
+            placeholder="https://monkeytype.com?..."
           />
           {linkError && <span className={styles.error}>This doesn&apos;t meet the requirements.</span>}
         </div>
