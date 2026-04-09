@@ -29,39 +29,46 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.topLeft}>
-        <button className={styles.postBtn} onClick={() => setShowModal(true)}>
-          Post theme
-        </button>
-      </div>
-
       <div className={styles.topCenter}>
         <h1 className={styles.logo}>Monkeytype Themes</h1>
         <p className={styles.disclaimer}>Not endorsed or promoted by miodec.</p>
 
         {!loading && (
-          <div className={styles.searchWrap}>
-<svg
-  className={styles.searchIcon}
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
-    stroke="rgba(255,255,255,0.4)"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</svg>
-            <input
-              className={styles.searchInput}
-              type="text"
-              placeholder="Search for a theme..."
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-            />
+          <div className={styles.searchRow}>
+            <div className={styles.searchWrap}>
+              <svg
+                className={styles.searchIcon}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                  stroke="rgba(255,255,255,0.4)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="Search for a theme..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <button
+              className={styles.uploadBtn}
+              onClick={() => setShowModal(true)}
+              title="Post theme"
+            >
+              <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.99997 5.50005H20M7.5 14L12.5 9.00003L17.5 14" stroke="#e2b714" strokeWidth="1.2" />
+                <path d="M12.5 9.00003V20" stroke="#e2b714" strokeWidth="1.2" />
+              </svg>
+            </button>
           </div>
         )}
       </div>
