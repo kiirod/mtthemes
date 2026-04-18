@@ -49,11 +49,11 @@ export default function ThemeCard({ theme }: Props) {
 
 // Inside ThemeCard.tsx
 function handleShare() {
-  const shareLink = `${window.location.origin}/use/${theme.id}`;
+  const shareLink = `${window.location.origin}/use/${theme.share_id}`;
   navigator.clipboard.writeText(shareLink);
-  alert('Link copied! This will redirect users directly to the theme.');
+  alert('Link copied! This will redirect users to the theme.');
 }
-
+  
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>{theme.name}</h2>
