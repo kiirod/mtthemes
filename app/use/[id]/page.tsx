@@ -1,3 +1,6 @@
+// PLASEAAERE WORK
+import { supabase } from '@/lib/supabase';
+
 export default async function UseThemeRedirect({ params }: { params: { id: string } }) {
   const cleanId = params.id.trim();
 
