@@ -47,12 +47,12 @@ export default function ThemeCard({ theme }: Props) {
     setLoading(false);
   }
 
-  // --- NEW: Share handler ---
-  function handleShare() {
-    const shareLink = `${window.location.origin}/use/${theme.id}`;
-    navigator.clipboard.writeText(shareLink);
-    alert('Link copied to clipboard!'); // Optional: Replace with a nicer toast notification if you have one
-  }
+// Inside ThemeCard.tsx
+function handleShare() {
+  const shareLink = `${window.location.origin}/use/${theme.id}`;
+  navigator.clipboard.writeText(shareLink);
+  alert('Link copied! This will redirect users directly to the theme.');
+}
 
   return (
     <div className={styles.card}>
