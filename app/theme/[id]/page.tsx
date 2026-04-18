@@ -3,30 +3,19 @@ import ThemeCard from '@/components/ThemeCard';
 import { notFound } from 'next/navigation';
 
 export default async function ThemePage({ params }: { params: { id: string } }) {
-  console.log("DEBUG: Attempting to find theme with ID:", params.id);
-
   const { data, error } = await supabase
     .from('themes')
     .select('*')
-    .eq('share_id', params.id)
-    .maybeSingle();
+    .eq('share_id', params.id);
 
-  if (error) {
-    console.error("DEBUG: Supabase Error:", error);
-  }
-
-  console.log("DEBUG: Theme found:", data);
-
-  if (!data) {
-    console.log("DEBUG: No data found for this ID.");
+  if (error || !data || data.length === 0) {
+    console.log("404 Error: No theme found for ID:", params.id);
     notFound();
   }
 
   return (
     <main style={{ padding: '40px', display: 'flex', justifyContent: 'center' }}>
-      <ThemeCard theme={data} />
+      <ThemeCard theme={data[0]} />
     </main>
   );
 }
-
-// holy fuck this shit is too hard i need to get claude to do this
