@@ -8,6 +8,11 @@ type Props = {
   onPosted: () => void;
 };
 
+const generateId = (len = 15) => 
+  Array.from({ length: len }, () => 
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]
+  ).join('');
+
 const isValidLink = (val: string) =>
   val.trim().startsWith('https://monkeytype.com/?customTheme=') ||
   val.trim().startsWith('https://monkeytype.com?customTheme=');
@@ -26,12 +31,16 @@ export default function PostThemeModal({ onClose, onPosted }: Props) {
     if (name.trim().length === 0) { setNameError(true); valid = false; } else setNameError(false);
     if (!isValidLink(link)) { setLinkError(true); valid = false; } else setLinkError(false);
     if (!valid) return;
+
     setPosting(true);
+    
     const { error } = await supabase.from('themes').insert({
       name: name.trim(),
       link: link.trim(),
       description: desc.trim() || null,
+      share_id: generateId(), 
     });
+    
     setPosting(false);
     if (!error) {
       onPosted();
