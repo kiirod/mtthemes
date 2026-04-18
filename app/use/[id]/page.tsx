@@ -1,5 +1,6 @@
 // PLASEAAERE WORK
 import { supabase } from '@/lib/supabase';
+import { redirect } from 'next/navigation';
 
 export default async function UseThemeRedirect({ params }: { params: { id: string } }) {
   const cleanId = params.id.trim();
